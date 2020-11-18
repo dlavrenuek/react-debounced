@@ -14,6 +14,7 @@
     "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/jest": "^26.0.15",
     "@types/react": "^16.9.56",
+    "@types/react-dom": "^16.9.9",
     "@typescript-eslint/eslint-plugin": "^4.0.0",
     "@typescript-eslint/parser": "^4.0.0",
     "babel-eslint": "^10.0.0",
@@ -40,8 +41,5 @@
   },
   "peerDependencies": {
     "react": "^16.8.3 || ^17.0.0-0"
-  },
-  "dependencies": {
-    "@types/react-dom": "^16.9.9"
   }
 }
