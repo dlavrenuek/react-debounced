@@ -1,6 +1,6 @@
 # Universal debounce hook for React
 
-![CI](https://github.com/dlavrenuek/react-debounced/workflows/CI/badge.svg)
+![CI](https://github.com/dlavrenuek/react-debounced/workflows/ci/badge.svg)
 [![npm version](https://badge.fury.io/js/react-debounced.svg)](http://badge.fury.io/js/react-debounced)
 
 Universal `useDebounce` hook which can be used for any debounced action. Only
