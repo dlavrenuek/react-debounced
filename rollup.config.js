@@ -1,5 +1,4 @@
-import typescript from 'rollup-plugin-typescript';
-import pkg from './package.json';
+import typescript from '@rollup/plugin-typescript';
 
 export default [
   {
@@ -10,12 +9,7 @@ export default [
     ],
     output: [
       {
-        file: pkg.main,
-        format: 'cjs',
-        sourcemap: true,
-      },
-      {
-        file: pkg.module,
+        dir: 'dist',
         format: 'es',
         sourcemap: true,
       },

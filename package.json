@@ -32,7 +32,6 @@
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-typescript": "^7.12.1",
-    "@rollup/plugin-typescript": "^6.1.0",
     "@types/enzyme": "^3.10.8",
     "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/jest": "^26.0.15",
@@ -68,6 +67,5 @@
   "peerDependencies": {
     "react": "^16.8.3 || ^17.0.0",
     "react-dom": "^16.8.3 || ^17.0.0"
-  },
-  "dependencies": {}
+  }
 }
