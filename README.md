@@ -3,8 +3,10 @@
 ![CI](https://github.com/dlavrenuek/react-debounced/workflows/ci/badge.svg)
 [![npm version](https://badge.fury.io/js/react-debounced.svg)](http://badge.fury.io/js/react-debounced)
 
+![react-debounced](docs/logo.png)
+
 Universal `useDebounce` hook which can be used for any debounced action. Only
-the last provided callback will be executed within a given timeout.
+the last provided callback will be executed after a given timeout.
 
 ## Installation
 
@@ -65,7 +67,7 @@ const Test = () => {
 
 `useDebounce` has only one optional parameter `timeout`, which is set to 250ms per default.
 
-#### Example with 100 milliseconds
+#### Example with a 100 milliseconds timeout
 
 ```typescript jsx
   const debounce = useDebounce(100);
