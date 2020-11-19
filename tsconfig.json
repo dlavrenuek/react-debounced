@@ -2,22 +2,30 @@
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
+    "lib": ["es2015", "dom"],
     "jsx": "react",
+    "declaration": true,
+    "declarationMap": true,
     "sourceMap": true,
+    "strict": true,
     "outDir": "./dist",
     "rootDir": "./src",
-    "strict": true,
     "noImplicitAny": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "moduleResolution": "node",
+    "resolveJsonModule": true,
     "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true
   },
+  "include": ["src"],
   "exclude": [
     "node_modules",
-    "dist"
+    "dist",
+    "config",
+    "coverage"
   ]
 }

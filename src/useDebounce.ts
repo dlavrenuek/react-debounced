@@ -12,12 +12,12 @@ const useDebounce: UseDebounce = (timeout = DEFAULT_TIMEOUT) => {
   return useCallback(
     (callback) => {
       if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
+        window.clearTimeout(timeoutRef.current);
       }
 
       timeoutRef.current = window.setTimeout(callback, timeout);
     },
-    [timeoutRef]
+    [timeoutRef, timeout]
   );
 };
 

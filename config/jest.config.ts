@@ -1,5 +1,5 @@
 module.exports = {
-  rootDir: './src',
+  rootDir: '../src',
   transform: {
     '.(ts|tsx)': 'ts-jest',
   },
@@ -9,7 +9,8 @@ module.exports = {
     },
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'json'],
+  coverageDirectory: '../coverage',
   testPathIgnorePatterns: ['/node_modules/', '/dist/'],
   modulePathIgnorePatterns: ['/dist/'],
-  setupFiles: ['./jest.setup.ts'],
+  setupFiles: ['../config/jest.setup.ts'],
 };

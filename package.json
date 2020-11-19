@@ -1,15 +1,38 @@
 {
   "name": "react-debounced",
   "version": "1.0.0",
-  "description": "Implementation agnostic debounce hooks for react",
-  "main": "index.js",
+  "description": "Universal debounce hook for react",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
+  "files": [
+    "dist",
+    "src/**/*.ts",
+    "tsconfig.json"
+  ],
   "repository": "git@github.com:dlavrenuek/react-debounced.git",
   "author": "Dimitri Lavrenük <dimitri.lavr@gmail.com>",
   "license": "MIT",
+  "keywords": [
+    "react",
+    "typescript",
+    "react-hooks",
+    "debounce"
+  ],
+  "scripts": {
+    "build": "yarn build:clean && yarn build:package",
+    "build:clean": "shx rm -rf dist",
+    "build:package": "rollup -c",
+    "format": "prettier --write \"src/**/*.{ts,tsx}\"",
+    "lint": "eslint --ext ts --ext tsx src",
+    "test": "jest --config ./config/jest.config.ts --maxWorkers=2",
+    "test:watch": "yarn test --watch",
+    "test:coverage": "yarn test --coverage --colors"
+  },
   "devDependencies": {
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-typescript": "^7.12.1",
+    "@rollup/plugin-typescript": "^6.1.0",
     "@types/enzyme": "^3.10.8",
     "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/jest": "^26.0.15",
@@ -35,11 +58,16 @@
     "prettier": "^2.1.2",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
+    "rollup": "^1.0.0",
+    "shx": "^0.3.3",
     "ts-jest": "^26.4.4",
     "ts-node": "^9.0.0",
+    "tslib": "^2.0.3",
     "typescript": "^4.0.5"
   },
   "peerDependencies": {
-    "react": "^16.8.3 || ^17.0.0-0"
-  }
+    "react": "^16.8.3 || ^17.0.0",
+    "react-dom": "^16.8.3 || ^17.0.0"
+  },
+  "dependencies": {}
 }

@@ -3,12 +3,14 @@ import useDebounce, { Debounce } from './useDebounce';
 import { mount, ReactWrapper } from 'enzyme';
 
 describe('useDebounce', () => {
-  const DEFAULT_TIMEOUT = 250;
+  const DEFAULT_TIMEOUT = 50;
 
   const mockCallbackOne = jest.fn();
   const mockCallbackTwo = jest.fn();
 
-  type TestButtonProps = { callback: () => unknown };
+  type TestButtonProps = {
+    callback: () => unknown;
+  };
 
   const TestButtonOne: FC<TestButtonProps> = ({ callback }) => (
     <button onClick={callback} />
