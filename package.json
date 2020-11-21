@@ -1,6 +1,6 @@
 {
   "name": "react-debounced",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Universal debounce hook for react",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm5/index.js",
