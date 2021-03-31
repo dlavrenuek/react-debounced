@@ -14,7 +14,7 @@ jobs:
         id: release
         with:
           release-type: node
-          package-name: test-release-please
+          package-name: react-debounced
 
       - uses: actions/checkout@v2
         # these if statements ensure that a publication only occurs when
