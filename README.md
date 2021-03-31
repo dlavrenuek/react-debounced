@@ -1,6 +1,7 @@
 # Universal debounce hook for React
 
 ![CI](https://github.com/dlavrenuek/react-debounced/workflows/ci/badge.svg)
+[![CodeQL](https://github.com/dlavrenuek/react-debounced/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/dlavrenuek/react-debounced/actions/workflows/codeql-analysis.yml)
 [![npm version](https://badge.fury.io/js/react-debounced.svg)](http://badge.fury.io/js/react-debounced)
 
 ![react-debounced](docs/logo.png)
@@ -15,7 +16,6 @@ Install with yarn
 ```bash
 yarn add react-debounced
 ```
-
 
 Install with npm
 
@@ -48,19 +48,15 @@ const Test = () => {
       setDebounced(value);
     });
   };
-  
+
   return (
     <>
       <p>Value: {value}</p>
       <p>Debounced: {debounced}</p>
-      <input
-        placeholder="Fill me out"
-        value={value}
-        onChange={handleInput}
-      />
+      <input placeholder="Fill me out" value={value} onChange={handleInput} />
     </>
-  )
-}
+  );
+};
 ```
 
 ### Options
@@ -70,7 +66,7 @@ const Test = () => {
 #### Example with a 100 milliseconds timeout
 
 ```typescript jsx
-  const debounce = useDebounce(100);
+const debounce = useDebounce(100);
 ```
 
 ### Multiple debounce in one component
@@ -78,9 +74,7 @@ const Test = () => {
 Each call of `useDebounce` inside a component will return a `debounce` function with its own timeout.
 If you need to debounce multiple input fields, just use:
 
-
 ```typescript jsx
-  const debounceOne = useDebounce();
-  const debounceTwo = useDebounce();
+const debounceOne = useDebounce();
+const debounceTwo = useDebounce();
 ```
-
