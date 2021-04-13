@@ -17,4 +17,4 @@ jobs:
           repo: "${{ github.repository }}"
           pull_number: "${{ github.event.number }}"
           event: "APPROVE"
-          body: "\@dependabot merge"
+          body: "Good job! @dependabot merge"
