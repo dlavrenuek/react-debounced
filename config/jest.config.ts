@@ -12,5 +12,4 @@ module.exports = {
   coverageDirectory: '../coverage',
   testPathIgnorePatterns: ['/node_modules/', '/dist/'],
   modulePathIgnorePatterns: ['/dist/'],
-  setupFiles: ['../config/jest.setup.ts'],
 };

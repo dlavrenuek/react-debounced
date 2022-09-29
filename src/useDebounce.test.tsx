@@ -1,6 +1,7 @@
-import React, { FC, useState } from 'react';
+import React, { FC, PropsWithChildren, useState } from 'react';
 import useDebounce, { Debounce } from './useDebounce';
-import { mount, ReactWrapper } from 'enzyme';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 describe('useDebounce', () => {
   const DEFAULT_TIMEOUT = 50;
@@ -12,13 +13,10 @@ describe('useDebounce', () => {
     callback: () => unknown;
   };
 
-  const TestButtonOne: FC<TestButtonProps> = ({ callback }) => (
-    <button onClick={callback} />
-  );
-
-  const TestButtonTwo: FC<TestButtonProps> = ({ callback }) => (
-    <button onClick={callback} />
-  );
+  const TestButton: FC<PropsWithChildren<TestButtonProps>> = ({
+    callback,
+    children,
+  }) => <button onClick={callback}>{children}</button>;
 
   type Callback = () => unknown;
 
@@ -45,8 +43,12 @@ describe('useDebounce', () => {
     return (
       <>
         {testVar}
-        <TestButtonOne callback={() => runCallback(debounceOne, callbackOne)} />
-        <TestButtonTwo callback={() => runCallback(debounceTwo, callbackTwo)} />
+        <TestButton callback={() => runCallback(debounceOne, callbackOne)}>
+          one
+        </TestButton>
+        <TestButton callback={() => runCallback(debounceTwo, callbackTwo)}>
+          two
+        </TestButton>
       </>
     );
   };
@@ -54,55 +56,55 @@ describe('useDebounce', () => {
   const wait = (time: number = DEFAULT_TIMEOUT + 10): Promise<void> =>
     new Promise((resolve) => setTimeout(resolve, time));
 
-  let wrapper: ReactWrapper;
+  const simulateClick = (name: string) =>
+    userEvent.click(screen.getByRole('button', { name }));
 
-  const simulateClick = (component: FC<TestButtonProps>) => {
-    wrapper.find(component).simulate('click');
-  };
+  const clickFirst = () => simulateClick('one');
+  const clickSecond = () => simulateClick('two');
 
   beforeEach(() => {
     jest.clearAllMocks();
-    wrapper = mount(<TestComponent />);
+    render(<TestComponent />);
   });
 
   it('Executes the callback', async () => {
-    simulateClick(TestButtonOne);
+    await clickFirst();
     await wait();
     expect(mockCallbackOne).toHaveBeenCalledTimes(1);
   });
 
   it('Executes the callback after the timeout', async () => {
-    simulateClick(TestButtonOne);
+    await clickFirst();
     expect(mockCallbackOne).toHaveBeenCalledTimes(0);
     await wait();
     expect(mockCallbackOne).toHaveBeenCalledTimes(1);
   });
 
   it('Executes the callback only once', async () => {
-    simulateClick(TestButtonOne);
-    simulateClick(TestButtonOne);
-    simulateClick(TestButtonOne);
+    await clickFirst();
+    await clickFirst();
+    await clickFirst();
     await wait();
     expect(mockCallbackOne).toHaveBeenCalledTimes(1);
   });
 
   it('Executes both callbacks', async () => {
-    simulateClick(TestButtonOne);
-    simulateClick(TestButtonTwo);
+    await clickFirst();
+    await clickSecond();
     await wait();
     expect(mockCallbackOne).toHaveBeenCalledTimes(1);
     expect(mockCallbackTwo).toHaveBeenCalledTimes(1);
   });
 
   it('Executes no additional callbacks', async () => {
-    simulateClick(TestButtonOne);
-    simulateClick(TestButtonOne);
-    simulateClick(TestButtonTwo);
-    simulateClick(TestButtonTwo);
+    await clickFirst();
+    await clickFirst();
+    await clickSecond();
+    await clickSecond();
     await wait();
     expect(mockCallbackOne).toHaveBeenCalledTimes(1);
     expect(mockCallbackTwo).toHaveBeenCalledTimes(1);
-    simulateClick(TestButtonTwo);
+    await clickSecond();
     await wait();
     expect(mockCallbackOne).toHaveBeenCalledTimes(1);
     expect(mockCallbackTwo).toHaveBeenCalledTimes(2);
