@@ -11,6 +11,14 @@ jobs:
   ci:
     name: ci
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        compatibility: [
+          { react: '16.x', testing-library: '12.x' },
+          { react: '17.x', testing-library: '12.x' },
+          { react: '18.x', testing-library: '13.x' },
+        ]
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
@@ -37,6 +45,15 @@ jobs:
 
     - name: Lint
       run: yarn lint
+
+    - name: Install react
+      run: |
+        yarn add -D \
+          react@${{ matrix.compatibility.react }} \
+          react-dom@${{ matrix.compatibility.react }} \
+          @types/react@${{ matrix.compatibility.react }} \
+          @types/react-dom@${{ matrix.compatibility.react }} \
+          @testing-library/react@${{ matrix.compatibility.testing-library }}
 
     - name: Test
       run: yarn test
