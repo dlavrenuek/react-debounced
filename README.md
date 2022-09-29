@@ -28,7 +28,7 @@ npm install react-debounced
 Import the hook first
 
 ```typescript
-import useDebounce from 'react-debounced';
+import { useDebounce } from 'react-debounced';
 ```
 
 Use it in your functional components:
