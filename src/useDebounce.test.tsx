@@ -13,9 +13,10 @@ describe('useDebounce', () => {
     callback: () => unknown;
   };
 
-  const TestButton: FC<PropsWithChildren<TestButtonProps>> = ({ callback, children }) => (
-    <button onClick={callback}>{children}</button>
-  );
+  const TestButton: FC<PropsWithChildren<TestButtonProps>> = ({
+    callback,
+    children,
+  }) => <button onClick={callback}>{children}</button>;
 
   type Callback = () => unknown;
 
