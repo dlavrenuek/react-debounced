@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.1](https://www.github.com/dlavrenuek/react-debounced/compare/v1.1.0...v1.1.1) (2022-09-29)
+
+
+### Bug Fixes
+
+* fix docs ([9c0b3b3](https://www.github.com/dlavrenuek/react-debounced/commit/9c0b3b3e22c0f209864ca2d63cc158cdd69ad3a7))
+
 ## [1.1.0](https://www.github.com/dlavrenuek/react-debounced/compare/v1.0.2...v1.1.0) (2022-09-29)
 
 
