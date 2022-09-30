@@ -5,7 +5,7 @@ const DEFAULT_TIMEOUT = 250;
 type Callback = () => void;
 export type Debounce = (callback: Callback) => void;
 
-type UseDebounce = (timeout?: number) => Debounce;
+export type UseDebounce = (timeout?: number) => Debounce;
 
 const useDebounce: UseDebounce = (timeout = DEFAULT_TIMEOUT) => {
   const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
