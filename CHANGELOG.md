@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.2](https://github.com/dlavrenuek/react-debounced/compare/v1.1.1...v1.1.2) (2022-10-01)
+
+
+### Bug Fixes
+
+* better type, make it node safe ([#280](https://github.com/dlavrenuek/react-debounced/issues/280)) ([9344332](https://github.com/dlavrenuek/react-debounced/commit/9344332c8184f464088fe1eee90417113163ac46))
+
 ### [1.1.1](https://www.github.com/dlavrenuek/react-debounced/compare/v1.1.0...v1.1.1) (2022-09-29)
 
 
