@@ -51,9 +51,8 @@ jobs:
         yarn add -D \
           react@${{ matrix.compatibility.react }} \
           react-dom@${{ matrix.compatibility.react }} \
-          @types/react@${{ matrix.compatibility.react }} \
           @types/react-dom@${{ matrix.compatibility.react }} \
-          @testing-library/react@${{ matrix.compatibility.testing-library }}
+          @testing-library/react@${{ matrix.compatibility.testing-library }};
 
     - name: Test
       run: yarn test
