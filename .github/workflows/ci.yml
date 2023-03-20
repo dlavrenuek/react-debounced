@@ -48,6 +48,7 @@ jobs:
 
     - name: Install react
       run: |
+        yarn remove @types/react;
         yarn add -D \
           react@${{ matrix.compatibility.react }} \
           react-dom@${{ matrix.compatibility.react }} \
