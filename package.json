@@ -34,7 +34,7 @@
     "@babel/core": "7.21.3",
     "@babel/preset-env": "7.20.2",
     "@babel/preset-typescript": "7.21.0",
-    "@testing-library/dom": "8.19.0",
+    "@testing-library/dom": "8.20.1",
     "@testing-library/react": "13.4.0",
     "@testing-library/user-event": "14.4.3",
     "@types/jest": "27.5.2",
