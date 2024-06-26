@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.3](https://github.com/dlavrenuek/react-debounced/compare/v1.1.2...v1.1.3) (2024-06-26)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @types/node to v20.14.9 ([#333](https://github.com/dlavrenuek/react-debounced/issues/333)) ([edce0fa](https://github.com/dlavrenuek/react-debounced/commit/edce0faaf4bd7cf0194315832fcc9bfc8970247c))
+
 ## [1.1.2](https://github.com/dlavrenuek/react-debounced/compare/v1.1.1...v1.1.2) (2022-10-01)
 
 
