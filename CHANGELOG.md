@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.3](https://github.com/dlavrenuek/react-debounced/compare/v1.1.2...v1.1.3) (2024-08-02)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @types/node to v20.14.10 ([#336](https://github.com/dlavrenuek/react-debounced/issues/336)) ([65f8401](https://github.com/dlavrenuek/react-debounced/commit/65f84019ac157ea7e19eeb3ae300e05c66341ec5))
+* **deps:** update dependency @types/node to v20.14.11 ([#348](https://github.com/dlavrenuek/react-debounced/issues/348)) ([b06f67a](https://github.com/dlavrenuek/react-debounced/commit/b06f67a961ce3d694566e49721121d39583983ea))
+* **deps:** update dependency @types/node to v20.14.12 ([#355](https://github.com/dlavrenuek/react-debounced/issues/355)) ([f2a6b00](https://github.com/dlavrenuek/react-debounced/commit/f2a6b0085e39d4d3144b931ac71fdd8e16770a87))
+* **deps:** update dependency @types/node to v20.14.13 ([#357](https://github.com/dlavrenuek/react-debounced/issues/357)) ([13de5e8](https://github.com/dlavrenuek/react-debounced/commit/13de5e82961106bc47aebd43c8b2a20becfb7a8d))
+* **deps:** update dependency @types/node to v20.14.14 ([#364](https://github.com/dlavrenuek/react-debounced/issues/364)) ([5d573c7](https://github.com/dlavrenuek/react-debounced/commit/5d573c79568429f02e8ed1253bf797f801b2a7c4))
+* **deps:** update dependency @types/node to v20.14.9 ([#333](https://github.com/dlavrenuek/react-debounced/issues/333)) ([edce0fa](https://github.com/dlavrenuek/react-debounced/commit/edce0faaf4bd7cf0194315832fcc9bfc8970247c))
+
 ## [1.1.2](https://github.com/dlavrenuek/react-debounced/compare/v1.1.1...v1.1.2) (2022-10-01)
 
 
