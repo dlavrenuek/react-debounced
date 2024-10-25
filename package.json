@@ -31,10 +31,10 @@
     "test:coverage": "yarn test --coverage --colors"
   },
   "devDependencies": {
-    "@babel/core": "7.25.9",
+    "@babel/core": "7.26.0",
     "@babel/eslint-parser": "7.25.9",
-    "@babel/preset-env": "7.25.9",
-    "@babel/preset-typescript": "7.25.9",
+    "@babel/preset-env": "7.26.0",
+    "@babel/preset-typescript": "7.26.0",
     "@testing-library/dom": "10.4.0",
     "@testing-library/react": "16.0.1",
     "@testing-library/user-event": "14.5.2",
