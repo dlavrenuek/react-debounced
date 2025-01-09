@@ -18,6 +18,7 @@ jobs:
           { react: '16.x', testing-library: '12.x' },
           { react: '17.x', testing-library: '12.x' },
           { react: '18.x', testing-library: '13.x' },
+          { react: '19.x', testing-library: '16.x' },
         ]
     steps:
     - name: Checkout repository
@@ -48,11 +49,11 @@ jobs:
 
     - name: Install react
       run: |
-        yarn remove @types/react;
         yarn add -D \
           react@${{ matrix.compatibility.react }} \
           react-dom@${{ matrix.compatibility.react }} \
           @types/react-dom@${{ matrix.compatibility.react }} \
+          @types/react@${{ matrix.compatibility.react }} \
           @testing-library/react@${{ matrix.compatibility.testing-library }};
 
     - name: Test
