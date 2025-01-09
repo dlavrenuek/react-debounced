@@ -8,7 +8,7 @@ export type Debounce = (callback: Callback) => void;
 export type UseDebounce = (timeout?: number) => Debounce;
 
 const useDebounce: UseDebounce = (timeout = DEFAULT_TIMEOUT) => {
-  const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
+  const timeoutRef = useRef<ReturnType<typeof setTimeout>>(null);
 
   return useCallback(
     (callback: Callback) => {
