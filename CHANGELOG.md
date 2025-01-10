@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.3](https://github.com/dlavrenuek/react-debounced/compare/v1.1.2...v1.1.3) (2025-01-10)
+
+
+### Features
+
+* add suport for React 19 ([#442](https://github.com/dlavrenuek/react-debounced/pull/442))
+
 ## [1.1.2](https://github.com/dlavrenuek/react-debounced/compare/v1.1.1...v1.1.2) (2022-10-01)
 
 
