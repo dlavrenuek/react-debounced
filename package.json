@@ -33,7 +33,7 @@
   "devDependencies": {
     "@babel/core": "7.27.1",
     "@babel/eslint-parser": "7.27.1",
-    "@babel/preset-env": "7.27.1",
+    "@babel/preset-env": "7.27.2",
     "@babel/preset-typescript": "7.27.1",
     "@testing-library/dom": "10.4.0",
     "@testing-library/react": "16.3.0",
