@@ -1,4 +1,4 @@
-import { useCallback, useRef } from 'react';
+import { useCallback, useRef } from "react";
 
 const DEFAULT_TIMEOUT = 250;
 
@@ -20,7 +20,7 @@ const useDebounce: UseDebounce = (timeout = DEFAULT_TIMEOUT) => {
 
       timeoutRef.current = setTimeout(callback, timeout);
     },
-    [timeoutRef, timeout]
+    [timeout],
   );
 };
 

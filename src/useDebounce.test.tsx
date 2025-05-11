@@ -1,9 +1,9 @@
-import React, { FC, PropsWithChildren, useState } from 'react';
-import useDebounce, { Debounce } from './useDebounce';
-import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+import React, { type FC, type PropsWithChildren, useState } from "react";
+import useDebounce, { type Debounce } from "./useDebounce";
 
-describe('useDebounce', () => {
+describe("useDebounce", () => {
   const DEFAULT_TIMEOUT = 50;
 
   const mockCallbackOne = jest.fn();
@@ -16,7 +16,11 @@ describe('useDebounce', () => {
   const TestButton: FC<PropsWithChildren<TestButtonProps>> = ({
     callback,
     children,
-  }) => <button onClick={callback}>{children}</button>;
+  }) => (
+    <button onClick={callback} type="button">
+      {children}
+    </button>
+  );
 
   type Callback = () => unknown;
 
@@ -57,30 +61,30 @@ describe('useDebounce', () => {
     new Promise((resolve) => setTimeout(resolve, time));
 
   const simulateClick = (name: string) =>
-    userEvent.click(screen.getByRole('button', { name }));
+    userEvent.click(screen.getByRole("button", { name }));
 
-  const clickFirst = () => simulateClick('one');
-  const clickSecond = () => simulateClick('two');
+  const clickFirst = () => simulateClick("one");
+  const clickSecond = () => simulateClick("two");
 
   beforeEach(() => {
     jest.clearAllMocks();
     render(<TestComponent />);
   });
 
-  it('Executes the callback', async () => {
+  it("Executes the callback", async () => {
     await clickFirst();
     await wait();
     expect(mockCallbackOne).toHaveBeenCalledTimes(1);
   });
 
-  it('Executes the callback after the timeout', async () => {
+  it("Executes the callback after the timeout", async () => {
     await clickFirst();
     expect(mockCallbackOne).toHaveBeenCalledTimes(0);
     await wait();
     expect(mockCallbackOne).toHaveBeenCalledTimes(1);
   });
 
-  it('Executes the callback only once', async () => {
+  it("Executes the callback only once", async () => {
     await clickFirst();
     await clickFirst();
     await clickFirst();
@@ -88,7 +92,7 @@ describe('useDebounce', () => {
     expect(mockCallbackOne).toHaveBeenCalledTimes(1);
   });
 
-  it('Executes both callbacks', async () => {
+  it("Executes both callbacks", async () => {
     await clickFirst();
     await clickSecond();
     await wait();
@@ -96,7 +100,7 @@ describe('useDebounce', () => {
     expect(mockCallbackTwo).toHaveBeenCalledTimes(1);
   });
 
-  it('Executes no additional callbacks', async () => {
+  it("Executes no additional callbacks", async () => {
     await clickFirst();
     await clickFirst();
     await clickSecond();
