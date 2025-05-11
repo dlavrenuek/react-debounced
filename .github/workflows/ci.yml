@@ -24,32 +24,26 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
+    - name: Install pnpm
+      uses: pnpm/action-setup@v4
+      with:
+        version: 10
+
     - name: Set up Node
       uses: actions/setup-node@v4
       with:
-        node-version: 20
-
-    - name: Get yarn cache directory path
-      id: yarn-cache-dir-path
-      run: echo "::set-output name=dir::$(yarn cache dir)"
-
-    - uses: actions/cache@v4
-      id: yarn-cache
-      with:
-        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-yarn-
+        node-version: 22
+        cache: pnpm
 
     - name: Install
-      run: yarn --frozen-lockfile
+      run: pnpm i --frozen-lockfile
 
     - name: Lint
-      run: yarn lint
+      run: pnpm run ci
 
     - name: Install react
       run: |
-        yarn add -D \
+        pnpm i -D \
           react@${{ matrix.compatibility.react }} \
           react-dom@${{ matrix.compatibility.react }} \
           @types/react-dom@${{ matrix.compatibility.react }} \
@@ -57,7 +51,7 @@ jobs:
           @testing-library/react@${{ matrix.compatibility.testing-library }};
 
     - name: Test
-      run: yarn test
+      run: pnpm test
 
     - name: Build
-      run: yarn build
+      run: pnpm build

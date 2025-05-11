@@ -1,2 +1,2 @@
-export * from './useDebounce';
-export { default } from './useDebounce';
+export * from "./useDebounce";
+export { default } from "./useDebounce";
